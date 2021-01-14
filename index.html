@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+    <head>
+        <style type="text/css">
+            html, body {
+                margin:0px;
+                padding:0px;
+            }
+            #title {
+                position:absolute;
+                top:5px;
+                left:5px;
+            }
+        </style>
+    </head>
+    <body>
+        <input id="title" type="text" placeholder="Title"></input>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.3.7/pixi.min.js" integrity="sha512-k8E2ILMRTO1YBnA2dvTDfsZs7f07gazZDQYbsv2NCxnM9hYFwCKu+rWISm8/fFB1I/gi0tgnURcXJVR7GlE0BA==" crossorigin="anonymous"></script>
+        <script>
+            var fileNames = [
+                "A._Ngarrindjeri_basket_Koyi_Museums_Victoria_final.png",
+                "australian football.png",
+                "B._Koyi_Emma_Karpany.png",
+                "C._feather_flowers-final.png",
+                "D._shield-final.png",
+                "E_Plonggi-final.png",
+                "F._broad_shield_lower_Murray-final.png",
+                "G._inspired_coil_basket-final.png",
+                "gum_leaves-removebg.png",
+                "H.basket-final.png",
+                "I.lidded_basket-final.png",
+                "J._belt_Ni-yeerd-final.png",
+                "K._football_guernsey_front-final.png",
+                "L._Football_Guernsey_back-final.png",
+                "M._mullar-karwyne_ngarrindjeri_expert-final.png",
+                "N._sheild_underside-final.png",
+                "O._centenary_protest-final.png",
+                "P._Commonwealth_games_protest-final.png",
+                "pelican feather.png",
+                "Q._Indigenous_National_doll-final.png",
+                "R._Proclamation_board-final.png",
+                "T._Aboriginal_votes_badge-final.png",
+                "U._National_doll-final.png",
+                "V._t-shirt-final.png",
+                "W. first NAIDOC week poster .jpg",
+                "X. Harmony Day posterjpg.jpg",
+                "Y._Winmar_guernsey-final.png",
+                "yvonne-koolmatrie_coorong-dreaming_1995_final.png",
+                "yvonne-koolmatrie_echidna_1999_final.png",
+                "yvonne-koolmatrie_fish-scoop_2010_final.png",
+                "Z10._Black_swan_eggs-final.png",
+                "z13 Banksia-by-Ferdinand-Bauer final.jpg",
+                "Z14._Letters_Patent-final.png",
+                "Z15_Murray_Cod-final.png",
+                "z16. McLeay mission.jpg",
+                "Z17_Fish_scoop_-final.png",
+                "Z18_Koolmatrie-final.png",
+                "Z19_Captain_Cook_cutlery-final.png",
+                "z19_eel_trap-final.png",
+                "Z22 May Gibbs Gumnut babies.jpg",
+                "z23.Banksia man.jpg",
+                "Z24 David Uaipon $50.jpg",
+                "z26_1700s_dolls-final.png",
+                "Z27_phyllopteryx-taeniolatus-common-seadragon-final.png",
+                "z28 Kondoli-Trevorrow whale final.png",
+                "z29 Kalfinal.png",
+                "Z2_are_you_Australian-final.png",
+                "z4. timber samples final.png",
+                "Z5._candelabra-final.png",
+                "z6. Australia Day badge final.png",
+                "z7._rock_against_racism-final.png",
+                "Z8._Eucalyptus_bottle-final.png",
+                "Z9_pied_cormorant_eggs_final.png"
+            ];
+
+            var positions = [
+                [
+                    719,
+                    317
+                ],
+                [
+                    446,
+                    76
+                ],
+                [
+                    568,
+                    76
+                ],
+                [
+                    640,
+                    239
+                ],
+                [
+                    667,
+                    417
+                ],
+                [
+                    535,
+                    11
+                ],
+                [
+                    771,
+                    397
+                ],
+                [
+                    570,
+                    394
+                ],
+                [
+                    714,
+                    84
+                ],
+                [
+                    761,
+                    132
+                ],
+                [
+                    435,
+                    16
+                ],
+                [
+                    482,
+                    118
+                ],
+                [
+                    802,
+                    290
+                ],
+                [
+                    567,
+                    253
+                ],
+                [
+                    613,
+                    127
+                ],
+                [
+                    452,
+                    378
+                ],
+                [
+                    767,
+                    46
+                ],
+                [
+                    654,
+                    48
+                ],
+                [
+                    431,
+                    156
+                ],
+                [
+                    564,
+                    42
+                ],
+                [
+                    793,
+                    350
+                ],
+                [
+                    523,
+                    102
+                ],
+                [
+                    654,
+                    123
+                ],
+                [
+                    705,
+                    155
+                ],
+                [
+                    692,
+                    309
+                ],
+                [
+                    519,
+                    380
+                ],
+                [
+                    484,
+                    367
+                ],
+                [
+                    458,
+                    285
+                ],
+                [
+                    547,
+                    97
+                ],
+                [
+                    527,
+                    43
+                ],
+                [
+                    444,
+                    100
+                ],
+                [
+                    817,
+                    198
+                ],
+                [
+                    567,
+                    324
+                ],
+                [
+                    741,
+                    247
+                ],
+                [
+                    632,
+                    153
+                ],
+                [
+                    729,
+                    112
+                ],
+                [
+                    636,
+                    331
+                ],
+                [
+                    565,
+                    122
+                ],
+                [
+                    541,
+                    176
+                ],
+                [
+                    767,
+                    201
+                ],
+                [
+                    492,
+                    254
+                ],
+                [
+                    448,
+                    48
+                ],
+                [
+                    634,
+                    384
+                ],
+                [
+                    511,
+                    148
+                ],
+                [
+                    612,
+                    284
+                ],
+                [
+                    687,
+                    111
+                ],
+                [
+                    814,
+                    162
+                ],
+                [
+                    604,
+                    71
+                ],
+                [
+                    789,
+                    60
+                ],
+                [
+                    613,
+                    100
+                ],
+                [
+                    696,
+                    219
+                ],
+                [
+                    494,
+                    59
+                ],
+                [
+                    442,
+                    115
+                ]
+            ];
+
+            var indexes = [36, 1, 2, 50, 41, 3, 45, 37, 4, 40, 5, 6, 48, 7, 8, 53, 9, 10, 11, 12, 46, 13, 14, 15, 16, 17, 52, 51, 18, 19, 20, 44, 21, 43, 22, 23, 24, 25, 26, 47, 38, 27, 42, 28, 39, 29, 30, 31, 32, 33, 49, 34, 35];
+
+            var app = new PIXI.Application({ backgroundColor: 0x000, width:1673 / 2, height:908 /2 });
+            app.view.id = "game";
+            
+            document.body.appendChild(app.view);
+
+            var texture = PIXI.Texture.from('assets/plinth.png');
+
+            texture.baseTexture.scaleMode = PIXI.SCALE_MODES.NEAREST;
+
+            var backgroundSprite = new PIXI.Sprite(texture);
+            backgroundSprite.scale.set(0.5);
+            
+            app.stage.addChild(backgroundSprite);
+            
+
+            var sprites = fileNames.map(function(fileName, index) {
+                var texture = PIXI.Texture.from('assets/' + fileName);
+                var sprite = new PIXI.Sprite(texture);
+
+                sprite.interactive = true;
+                sprite.buttonMode = true;
+                sprite.anchor.set(0.5);
+                sprite.scale.set(0.25);
+
+                sprite
+                    .on('pointerdown', onDragStart)
+                    .on('pointerup', onDragEnd)
+                    .on('pointerupoutside', onDragEnd)
+                    .on('pointermove', onDragMove);
+
+                sprite.x = positions[index][0];
+                sprite.y = positions[index][1];
+                app.stage.addChild(sprite);
+
+                return sprite;
+            });
+
+            sprites.forEach(function(sprite, i) {
+                sprite.parent.setChildIndex(sprite, indexes[i]);
+            });
+
+            var style = new PIXI.TextStyle({
+                fontFamily: 'Arial',
+                fontSize: 26,
+                fontStyle: 'normal',
+                fontWeight: 'bold',
+                fill: ['#000', '#000'],
+                stroke: '#000',
+                strokeThickness: 0,
+                dropShadow: false,
+                dropShadowColor: '#000000',
+                dropShadowBlur: 1,
+                dropShadowAngle: Math.PI / 6,
+                dropShadowDistance: 6,
+                wordWrap: true,
+                wordWrapWidth: 340,
+                lineJoin: 'round', 
+                align:"center"
+            });
+
+            var richText = new PIXI.Text('', style);
+            richText.x = 205;
+            richText.y = 345;
+
+            richText.anchor.set(0.5, 0.5);
+
+            app.stage.addChild(richText);
+
+            var titleText = document.querySelector("#title");
+            titleText.addEventListener("input", function(event){
+                console.log(event, richText.text = titleText.value);
+            });
+
+            function onDragStart(event) {
+                this.data = event.data;
+                this.alpha = 0.5;
+                this.dragging = true;
+
+                this.parent.setChildIndex(this, this.parent.children.length - 1);
+            }
+
+            function onDragEnd() {
+                this.alpha = 1;
+                this.dragging = false;
+                this.data = null;
+
+                var positions = sprites.map(function(sprite, i) {
+                    return [sprite.position.x, sprite.position.y];
+                });
+                var indexes = sprites.map(function(sprite, i) {
+                    return sprite.parent.children.indexOf(sprite);
+                })
+                //console.log(positions, indexes);
+                
+            }
+
+            function onDragMove() {
+                if (this.dragging) {
+                    const newPosition = this.data.getLocalPosition(this.parent);
+                    this.x = newPosition.x;
+                    this.y = newPosition.y;
+                }
+            }
+
+        </script>
+    </body>
+
+
+</html>
